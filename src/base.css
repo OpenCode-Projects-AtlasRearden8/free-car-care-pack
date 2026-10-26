@@ -1,0 +1,196 @@
+/* Free Car Care Pack — shared print styles (US Letter, ink-friendly) */
+
+@page {
+  size: letter;
+  margin: 0.55in 0.6in 0.7in 0.6in;
+  @bottom-center {
+    content: "Free Car Care Pack — free to print, share, and use";
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #8a8a8a;
+  }
+}
+
+@page intro-page {
+  @bottom-center {
+    content: "Page 1 of this PDF is a quick-start guide — the printable sheet starts on page 2.";
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #8a8a8a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #1e2430;
+  font-size: 10pt;
+  line-height: 1.45;
+}
+
+/* ---------- Getting-started intro page ---------- */
+
+section.intro {
+  page: intro-page;
+  page-break-after: always;
+  background: #f4f7fa;
+  border: 1.5pt solid #c9d6e3;
+  border-radius: 8pt;
+  padding: 16pt 18pt 14pt 18pt;
+}
+
+section.intro h1 {
+  font-size: 20pt;
+  margin: 0 0 2pt 0;
+  color: #1d4e79;
+}
+
+section.intro p.kicker {
+  margin: 0 0 10pt 0;
+  font-size: 9.5pt;
+  color: #5a6b7d;
+  font-style: italic;
+}
+
+section.intro h2 {
+  font-size: 12pt;
+  margin: 12pt 0 4pt 0;
+  color: #1d4e79;
+  border-bottom: 1pt solid #c9d6e3;
+  padding-bottom: 2pt;
+}
+
+section.intro ul, section.intro ol {
+  margin: 3pt 0 6pt 0;
+  padding-left: 16pt;
+}
+
+section.intro li { margin: 2pt 0; }
+
+section.intro .friendly {
+  background: #fff8e8;
+  border: 1pt solid #eadfb8;
+  border-radius: 6pt;
+  padding: 8pt 10pt;
+  margin: 10pt 0 6pt 0;
+}
+
+section.intro .manual-note {
+  background: #eef7ee;
+  border: 1pt solid #bedfbd;
+  border-radius: 6pt;
+  padding: 8pt 10pt;
+  margin: 8pt 0 4pt 0;
+}
+
+section.intro .manual-note strong, section.intro .friendly strong { color: #1d4e79; }
+
+/* ---------- Printable sheet pages ---------- */
+
+section.sheet { page-break-before: always; }
+
+.page-header {
+  border-bottom: 2pt solid #1d4e79;
+  padding-bottom: 4pt;
+  margin-bottom: 10pt;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 15pt;
+  color: #1d4e79;
+}
+
+.page-header .sub {
+  font-size: 9pt;
+  color: #5a6b7d;
+  margin-top: 2pt;
+}
+
+.fill-title {
+  font-size: 12pt;
+  color: #1d4e79;
+  border-bottom: 1pt solid #1d4e79;
+  margin: 10pt 0 4pt 0;
+  padding-bottom: 1pt;
+}
+
+ul.checklist { list-style: none; padding: 0; margin: 4pt 0 8pt 0; }
+ul.checklist li {
+  padding: 5pt 0 5pt 20pt;
+  border-bottom: 0.75pt dotted #b9c4cf;
+  position: relative;
+}
+
+/* print-safe checkbox: no emoji, no web fonts */
+ul.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6pt;
+  width: 9.5pt;
+  height: 9.5pt;
+  border: 1.25pt solid #1e2430;
+  border-radius: 2pt;
+  background: #fff;
+}
+
+p.note-manual {
+  background: #eef7ee;
+  border: 1pt solid #bedfbd;
+  border-radius: 6pt;
+  padding: 6pt 9pt;
+  font-size: 9pt;
+  margin: 8pt 0;
+}
+
+p.note-manual strong { color: #1d4e79; }
+
+table.fillin {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0 10pt 0;
+}
+
+table.fillin th {
+  background: #eaf1f8;
+  color: #1d4e79;
+  text-align: left;
+  font-size: 9pt;
+  padding: 4pt 6pt;
+  border: 0.75pt solid #9fb4c8;
+}
+
+table.fillin td {
+  padding: 7pt 6pt;
+  border: 0.75pt solid #9fb4c8;
+  font-size: 9.5pt;
+}
+
+table.fillin tr { page-break-inside: avoid; }
+
+.writeline {
+  border-bottom: 1pt solid #7f8c9b;
+  min-height: 14pt;
+  margin-bottom: 8pt;
+}
+
+.writegrid { width: 100%; border-collapse: collapse; margin-bottom: 8pt; }
+.writegrid td {
+  border-bottom: 1pt solid #7f8c9b;
+  padding: 8pt 6pt 3pt 6pt;
+  vertical-align: top;
+}
+.writegrid .lbl {
+  border-bottom: none;
+  font-size: 8.5pt;
+  color: #5a6b7d;
+  text-transform: uppercase;
+  letter-spacing: 0.4pt;
+  padding-top: 2pt;
+}
+
+.cols2 { column-count: 2; column-gap: 24pt; }
